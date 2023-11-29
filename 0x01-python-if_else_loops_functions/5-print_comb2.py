@@ -3,4 +3,4 @@ for i in range(0, 100):
     if i in range (0, 10):
         print("0{:d}, ".format(i), end="")
     else:
-        print("{:d}".format(i), end="" if i == 99 else ", ")
+        print("{:d}".format(i), end="\n" if i == 99 else ", ")
