@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
+    if not matrix:
+        return None
     for i in matrix[0][:2]:
         print("{:d}".format(i), end=" ")
     print(matrix[0][2], end="$\n")
