@@ -1,12 +1,6 @@
-#!/usr/bin/python3
 def print_matrix_integer(matrix=[[]]):
-    for i in matrix[0][:2]:
-        print("{:d}".format(i), end=" ")
-    print(matrix[0][2], end="$\n")
-    for j in matrix[1][:2]:
-        print("{:d}".format(j), end=" ")
-    print(matrix[1][2], end="$\n")
-    for x in matrix[2][:2]:
-        print("{:d}".format(x), end=" ")
-    print(matrix[2][2], end="$\n")
+    for row in matrix:
+        for element in row[:-1]:
+            print("{:d}".format(element), end=" ")
+        print("{:d}$".format(row[-1]))
     print("--$\n$")
