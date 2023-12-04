@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def divisible_by_2(my_list=[]):
-    if not len(my_list) == 0:
+    if my_list is None == 0:
         return None
     new = []
     for i in my_list:
