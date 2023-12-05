@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 def my_function(a, b):
     add = magic_calculation_102.add
     sub = magic_calculation_102.sub
@@ -9,4 +10,3 @@ def my_function(a, b):
         return c
     else:
         return sub(a, b)
-    return 0
