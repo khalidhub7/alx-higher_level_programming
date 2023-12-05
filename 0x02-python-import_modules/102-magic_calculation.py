@@ -10,3 +10,4 @@ def my_function(a, b):
         return c
     else:
         return sub(a, b)
+    return 0
