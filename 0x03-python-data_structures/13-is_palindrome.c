@@ -17,6 +17,7 @@ int is_palindrom(listint_t **head)
  * o_palinde - know if is palinde
  * @head: head list
  * @end: end list
+ * Return: nothing
  */
 int o_palinde(listint_t **head, listint_t *end)
 {
