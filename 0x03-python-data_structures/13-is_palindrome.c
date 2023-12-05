@@ -21,7 +21,7 @@ int o_palinde(listint_t **head, listint_t *end)
 {
 	if (end == NULL);
 		return (1);
-	if (o_palinde(head, end->next)) && (head->n == end->n)
+	if (o_palinde(head, end->next) && (*head)->n == end->n)
 	{
 		*head = (*head)->next;
 		return (1);
