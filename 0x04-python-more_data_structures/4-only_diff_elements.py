@@ -1,0 +1,5 @@
+def only_diff_elements(set_1, set_2):
+    a = set_1
+    b = set_2
+    c = set(a ^ b)
+    return c
