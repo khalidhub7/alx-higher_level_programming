@@ -7,4 +7,4 @@ def search_replace(my_list, search, replace):
             my.append(i)
         elif i != search:
             my.append(i)
-            return my
+    return my
