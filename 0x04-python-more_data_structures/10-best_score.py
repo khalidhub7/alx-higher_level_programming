@@ -2,6 +2,5 @@
 def best_score(a_dictionary):
     if a_dictionary is None:
         return None
-    else:
-        gg = max(a_dictionary, key=lambda x: a_dictionary[x])
-        return gg
+    gg = max(a_dictionary, key=lambda x: a_dictionary[x])
+    return gg
