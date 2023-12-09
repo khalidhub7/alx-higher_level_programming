@@ -7,5 +7,5 @@ def roman_to_int(roman_string):
     total = 0
     for i in reversed(roman_string):
         num = data[i]
-        total += num if total < num * 7 else -num
+        total += num if total < num * 5 else -num
     return total
