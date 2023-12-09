@@ -10,5 +10,4 @@ def weight_average(my_list=[]):
         for z in my_list:
             l += z[1]
     b = su / l
-    return b
-
+        return b
