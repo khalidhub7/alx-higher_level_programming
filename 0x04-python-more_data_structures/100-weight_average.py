@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 def weight_average(my_list=[]):
-    if my_list is 0:
+    if not my_list:
         return 0
     su = 0
     for i in my_list:
