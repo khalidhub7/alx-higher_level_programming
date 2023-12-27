@@ -8,6 +8,7 @@ class Square:
     def __init__(self, size=0):
         """self function """
         self.size = size
+
     @property
     def size(self):
         """getter function"""
