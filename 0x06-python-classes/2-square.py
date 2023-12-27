@@ -1,5 +1,8 @@
 #!/usr/bin/python3
 """square module"""
+
+
+
 class Square:
     """define square"""
     def __init__(self, size=0):
