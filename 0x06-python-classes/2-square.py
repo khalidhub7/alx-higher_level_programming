@@ -1,19 +1,19 @@
 #!/usr/bin/python3
-"""Class python."""
+"""Square module."""
 
 
 class Square:
-    """Def square hhh."""
+    """Defines a square."""
 
     def __init__(self, size = 0):
         """Constructor.
 
         Args:
-            size: len of side of the square.
+            size: Length of a side of the square.
 
         Raises:
-            TypeError: if not int
-            ValueError: if negative
+            TypeError: If size is not an integer
+            ValueError: If size is less than 0
         """
         if not isinstance(size, int):
             raise TypeError('size must be an integer')
