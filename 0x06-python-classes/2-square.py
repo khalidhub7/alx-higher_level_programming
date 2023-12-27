@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-"""my class in python."""
+"""Class python."""
 
 
 class Square:
-    """def square hhh."""
+    """Def square hhh."""
 
     def __init__(self, size = 0):
         """Constructor.
