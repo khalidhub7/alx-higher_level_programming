@@ -2,11 +2,11 @@
 """my class in python."""
 
 class Square:
-    """def square hhh """
+    """def square hhh."""
     def __init__(self, size = 0):
-        """square.
+        """Constructor.
         Args:
-            size: len of side of the square
+            size: len of side of the square.
         Raises:
             TypeError: if not int
             ValueError: if negative
