@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""this is my first class in python."""
+"""Square def"""
 class Square:
     """define this class"""
-    pass
+    print(end="")
