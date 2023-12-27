@@ -12,7 +12,7 @@ class Square:
     @property
     def size(self):
         """getter function"""
-        return self.size
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -20,8 +20,8 @@ class Square:
             raise TypeError('size must be an integer')
         if value < 0:
             raise ValueError('size must be >= 0')
-        self.size = value
+        self.__size = value
 
     def area(self):
         """ squared funcion"""
-        return self.size ** 2
+        return self.__size ** 2
