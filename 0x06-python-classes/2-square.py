@@ -7,6 +7,7 @@ class Square:
         """Constructor.
         Args:
             size: len of side of the square.
+
         Raises:
             TypeError: if not int
             ValueError: if negative
