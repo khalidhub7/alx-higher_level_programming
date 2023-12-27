@@ -2,6 +2,7 @@
 """my class in python."""
 
 
+
 class Square:
     """def square hhh """
     def __init__(self, size = 0):
