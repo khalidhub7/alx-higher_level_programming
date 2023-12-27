@@ -4,6 +4,7 @@
 
 class Square:
     """square define"""
+
     def __init__(self, size=0):
         """self function """
         self.size = size
@@ -11,6 +12,7 @@ class Square:
     def size(self):
         """getter function"""
         return self.__size
+
     @size.setter
     def size(self, value):
         if not isinstance(value, int):
@@ -18,6 +20,7 @@ class Square:
         if value < 0:
             raise ValueError('size must be >= 0')
         self.__size = value
+
     def area(self):
         """ squared funcion"""
         return self.size ** 2
