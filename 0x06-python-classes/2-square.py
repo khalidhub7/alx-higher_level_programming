@@ -4,7 +4,13 @@
 class Square:
     """def square hhh """
     def __init__(self, size = 0):
-        """drna 2 raises type error, value error"""
+        """square.
+        Args:
+            size: len of side of the square
+        Raises:
+            TypeError: if not int
+            ValueError: if negative
+        """
         if type(size) == str:
             raise TypeError('size must be an integer')
         elif type(size) != str:
