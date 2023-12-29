@@ -1,18 +1,18 @@
 #!/usr/bin/python3
-"""define square"""
+"""Define square"""
 
 
 class Square:
-    """inialization """
+    """Inialization"""
 
     def __init__(self, size=0, position=(0, 0)):
-        """define inialization"""
+        """Define inialization"""
         self.size = size
         self.position = position
 
     @property
     def size(self):
-        """ get w set w raises"""
+        """Get w set w raises"""
         return (self.__size)
 
     @size.setter
@@ -25,7 +25,7 @@ class Square:
     
     @property
     def position(self):
-        """get/set dyal position"""
+        """Get/set dyal position"""
         return (self.__position)
 
     @position.setter
@@ -38,11 +38,11 @@ class Square:
         self.__position = value
 
     def area(self):
-        """define squared"""
+        """Define squared"""
         return (self.__size * self.__size)
 
     def my_print(self):
-        """define print function"""
+        """Define print function"""
         if self.__size == 0:
             print("")
             return
