@@ -28,4 +28,5 @@ class Square:
         """define print function"""
         for i in range(self.size):
             print("#" * self.size)
-        print()
+        if self.size == 0:
+            print()
