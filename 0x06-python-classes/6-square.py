@@ -4,6 +4,7 @@
 
 class Square:
     """inialization """
+
     def __init__(self, size=0, position=(0, 0)):
         """define inialization"""
         self.size = size
@@ -13,11 +14,6 @@ class Square:
     def size(self):
         """ get w set w raises"""
         return self.__size
-    
-    @property
-    def position(self):
-        """get/set dyal position"""
-        return self.__position
 
     @size.setter
     def size(self, value):
@@ -27,6 +23,11 @@ class Square:
             raise ValueError("size must be >= 0")
         self.__size = value
     
+    @property
+    def position(self):
+        """get/set dyal position"""
+        return self.__position
+
     @position.setter
     def position(self, value):
         if (not isinstance(value, tuple) or
@@ -46,6 +47,7 @@ class Square:
             print()
             return
         [print("") for i in range(0, self.__position[1])]
-        for i in range(self.__size):
-            print("_" * self.__position[0], end="")
-            print("#" * self.__size)
+        for i in range(0, self.__size):
+            [print(" ", end="") for j in range(0, self.__position[0])]
+            [print("#", end="") for k in range(0, self.__size)]
+            print()
