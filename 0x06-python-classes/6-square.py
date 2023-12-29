@@ -41,10 +41,10 @@ class Square:
 
     def my_print(self):
         """define print function"""
-        if self.size == 0:
+        if self.__size == 0:
             print()
             return
         [print("") for i in range(0, self.__position[1])]
-        for i in range(self.size):
+        for i in range(self.__size):
             print("_" * self.__position[0], end="")
-            print("#" * self.size)
+            print("#" * self.__size)
