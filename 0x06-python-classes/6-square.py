@@ -5,6 +5,7 @@
 class Square:
     """inialization """
     def __init__(self, size=0, position=(0, 0)):
+        """define inialization"""
         self.size = size
         self.position = position
 
