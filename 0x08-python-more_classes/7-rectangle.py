@@ -6,7 +6,10 @@ class Rectangle:
     """my empty class"""
 
     number_of_instances = 0
+    """calcul instances"""
+    
     print_symbol = '#'
+    """print with specifiq symbole"""
 
     def __init__(self, width=0, height=0):
         """define instances"""
