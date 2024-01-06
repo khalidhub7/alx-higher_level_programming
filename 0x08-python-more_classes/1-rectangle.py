@@ -8,10 +8,12 @@ class Rectangle:
         """define instances"""
         self.width = width
         self.height = height
+
     @property
     def width(self):
         """get dyal width"""
         return self.__width
+
     @width.setter
     def width(self, value):
         """set dyal width"""
@@ -20,10 +22,12 @@ class Rectangle:
         if value < 0:
             raise ValueError('width must be >= 0')
         self.__width = value
+
     @property
     def height(self):
         """get dyal height"""
         return self.__height
+
     @height.setter
     def height(self, value):
         """set d height"""
