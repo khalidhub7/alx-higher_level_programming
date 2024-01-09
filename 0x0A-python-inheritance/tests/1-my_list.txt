@@ -1,10 +1,10 @@
-Import function from module:
-    >>> MyList = __import__('1-my_list').MyList
+Import function from module
+>>> MyList = __import__('1-my_list').MyList
 
 Correct Class Type test:
-    >>> ml = MyList()
-    >>> type(ml) == MyList
-    True
+>>> ml = MyList()
+>>> type(ml) == MyList
+True
 
 Correct Instance test:
     >>> ml = MyList()
