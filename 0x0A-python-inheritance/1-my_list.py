@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-'''Module for MyList class.'''
+"""my module"""
 
 
 class MyList(list):
-    '''Custom MyList class.'''
-    def print_sorted(self):
-        '''Method for printing sorted list.'''
-        print(sorted(self))
+    """print self __katkhdm__ ghir f inheritance"""
+    def print_sorted(parametre):
+        """sort && print"""
+        print((sorted(parametre)))
