@@ -5,6 +5,6 @@
 class MyList(list):
     """print self katkhdm just
     f inheritance"""
-    def print_sorted(parametre):
+    def print_sorted(self):
         """sort print"""
-        print(sorted(parametre))
+        print(sorted(self))
