@@ -1,21 +1,30 @@
 #!/usr/bin/python3
-'''Module for Rectangle class.'''
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
+'''module'''
 
 
+class BaseGeometry:
+    '''class'''
+    def area(self):
+        '''define area'''
+        raise Exception('area() is not implemented')
+    def integer_validator(self, name, value):
+        '''validate value'''
+        if not isinstance(value, int):
+            raise TypeError('<name> must be an integer')
+        if value <= 0:
+            raise ValueError('<name> must be greater than 0')
+        value = value
 class Rectangle(BaseGeometry):
-    '''A subclass representing a rectangle.'''
+    '''class'''
     def __init__(self, width, height):
-        '''Constructor.'''
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
+        '''initialization'''
+        super().integer_validator("w", width)
+        super().integer_validator("h", height)
         self.__width = width
         self.__height = height
-
     def area(self):
-        '''Method which returns area of rectangle.'''
-        return self.__width * self.__height
-
+        '''calcul area'''
+        return self.__height * self.__width
     def __str__(self):
-        '''String representation method.'''
-        return "[Rectangle] " + str(self.__width) + "/" + str(self.__height)
+        '''print method'''
+        return "[Rectangle] {}/{}".format(self.__width, self.__height)
