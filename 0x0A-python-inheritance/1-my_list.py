@@ -3,8 +3,8 @@
 
 
 class MyList(list):
-    """print self __katkhdm__ ghir
+    """print self katkhdm just
     f inheritance"""
     def print_sorted(parametre):
-        """sort && print"""
+        """sort print"""
         print(sorted(parametre))
