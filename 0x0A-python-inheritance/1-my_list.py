@@ -7,4 +7,4 @@ class MyList(list):
     f inheritance"""
     def print_sorted(parametre):
         """sort && print"""
-        print((sorted(parametre)))
+        print(sorted(parametre))
