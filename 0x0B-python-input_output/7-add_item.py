@@ -15,5 +15,6 @@ try:
     b = load_from_json_file("add_item.json")
 except Exception:
     b = []
-b += 1
+
+b.extend(a)
 save_to_json_file(a, "add_item.json")
