@@ -1,8 +1,11 @@
 #!/usr/bin/python3
-import json
 '''my module'''
+
+
+import json
 
 
 def to_json_string(my_obj):
     '''return json string'''
-    return json.dumps(my_obj)
+    with open(my_obj, "r", encoding='UTF8') as a:
+        return json.dumps(a)
