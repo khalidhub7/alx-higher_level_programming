@@ -14,4 +14,4 @@ except Exception:
     b = []
 
 b += a
-sh: 1: q: not found
+save_to_json_file(b, "add_item.json")
