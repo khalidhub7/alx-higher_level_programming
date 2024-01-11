@@ -29,7 +29,6 @@ class Student:
 
     def reload_from_json(self, json):
         '''replace dict'''
-        a = json.loads(json)
-        for i, j in a.items():
+        for i, j in json.items():
             if i in self.__dict__:
                 self.__doc__[i] = j
