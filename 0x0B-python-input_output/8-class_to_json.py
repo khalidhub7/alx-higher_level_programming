@@ -7,4 +7,4 @@ import json
 
 
 def class_to_json(obj):
-    json.loads(obj)
+    return json.loads(obj)
