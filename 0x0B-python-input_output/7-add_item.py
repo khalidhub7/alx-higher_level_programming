@@ -13,5 +13,5 @@ try:
 except Exception:
     b = []
 
-b += a
+b.extend(a)
 save_to_json_file(b, "add_item.json")
