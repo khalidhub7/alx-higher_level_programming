@@ -5,7 +5,5 @@ import json
 
 def to_json_string(my_obj):
     '''return json string'''
-    b =""
     with open(my_obj, "r", encoding='UTF8') as a:
-        json.dumps(a, b)
-        return b
+        return json.dumps(a)
