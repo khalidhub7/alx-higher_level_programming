@@ -1,3 +1,8 @@
+#!/usr/bin/python3
+'''base module.'''
+from modules.Base import Base
+
+
 class Rectangle(Base):
     '''rectangle class'''
 
