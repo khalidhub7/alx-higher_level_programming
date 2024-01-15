@@ -37,7 +37,7 @@ class Rectangle(Base):
         '''get set.'''
         return self.__x
 
-    @height.setter
+    @x.setter
     def x(self, value):
         self.__x = value
 
