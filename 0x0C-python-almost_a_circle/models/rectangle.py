@@ -79,7 +79,7 @@ class Rectangle(Base):
         2-- update by taking care of x and y
         '''
         str_updated = '\n' * self.y + \
-                (' ' * self.x + '#' * self.width + '\n') * self.height
+                      (' ' * self.x + '#' * self.width + '\n') * self.height
         print(str_updated, end='')
 
     def __str__(self):
