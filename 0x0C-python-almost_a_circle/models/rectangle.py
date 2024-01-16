@@ -75,9 +75,11 @@ class Rectangle(Base):
         return self.__height * self.__width
 
     def display(self):
-        '''print width w height in # symbole'''
-        for i in range(self.__height):
-            print(self.__width * "#")
+        '''1--print width && height in # symbole
+        2-- update by taking care of x and y
+        '''
+        str_updated = '\n' * self.y + (' ' * self.x + '#' * self.width + '\n') * self.height
+        print(str_updated, end='')
 
     def __str__(self):
         '''Return string info to the user.'''
