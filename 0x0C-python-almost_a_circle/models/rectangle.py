@@ -80,6 +80,6 @@ class Rectangle(Base):
             print(self.__width * "#")
 
     def __str__(self):
-        '''str mode'''
+        '''return string info to the user'''
         return "[{}] ({}) {}/{} - {}/{}"\
                 .format(type(self).__name__, self.id, self.x, self.y, self.width, self.height)
