@@ -85,7 +85,7 @@ class Rectangle(Base):
     def __str__(self):
         '''Return string info to the user.'''
         return '[{}] ({}) {}/{} - {}/{}'.\
-            format(self.__class__.__name__, self.id, self.x, self.y, self.width,
+            format(type(self).__name__, self.id, self.x, self.y, self.width,
                    self.height)
 
     def __update(self, id=None, width=None, height=None, x=None, y=None):
