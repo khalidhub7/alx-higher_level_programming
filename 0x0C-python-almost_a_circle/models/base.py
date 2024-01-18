@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''base module.'''
-import json
+from json import dumps, loads
 
 
 class Base:
@@ -22,4 +22,4 @@ class Base:
             a = "[]"
         else:
             a = json.dumps(list_dictionaries)
-            return a
+        return a
