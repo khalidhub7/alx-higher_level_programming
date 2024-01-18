@@ -22,4 +22,4 @@ class Base:
             a = "[]"
         else:
             a = json.dumps(list_dictionaries)
-        return a
+            return a
