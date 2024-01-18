@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''base module.'''
-from json import dumps, loads
+from json import dumps
 
 
 class Base:
