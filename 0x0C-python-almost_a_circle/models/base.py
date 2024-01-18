@@ -17,4 +17,5 @@ class Base:
 
     def to_json_string(list_dictionaries):
         '''return json string'''
-        return json.dumps(list_dictionaries)
+        a = json.dumps(list_dictionaries)
+        return a
