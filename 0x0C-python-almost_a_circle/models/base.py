@@ -32,3 +32,10 @@ class Base:
             list_objs = [i.to_dictionary() for i in list_objs]
         with open(myfile, 'w', encoding='UTF-8') as a:
             a.write(cls.to_json_string(list_objs))
+
+    def from_json_string(json_string):
+        '''return json str'''
+        if json_string is None or not json_string:
+            return []
+        else:
+            return dumps(json_string)
