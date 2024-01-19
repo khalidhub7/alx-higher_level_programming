@@ -58,8 +58,8 @@ class Base:
     def load_from_file(cls):
         '''Loads str from file AND unjsonifies.'''
         from os import path
-        a = '{}.json'.format(cls.__name__)
+        a = "{}.json".format(cls.__name__)
         if not path.isfile(a):
             return []
-        with open(a, 'r', encoding='UTF-8') as x:
+        with open(a, "r", encoding="UTF-8") as x:
             return [cls.create(**dic) for dic in cls.from_json_string(x.read())]
