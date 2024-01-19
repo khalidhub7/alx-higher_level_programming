@@ -67,7 +67,7 @@ class Base:
 
     @classmethod
     def save_to_file_csv(cls, list_objs):
-        '''Saves object to csv file.'''
+        '''Save object to a csv file.'''
         from models.rectangle import Rectangle
         from models.square import Square
         if list_objs is not None:
@@ -84,10 +84,10 @@ class Base:
 
     @classmethod
     def load_from_file_csv(cls):
-        '''Loads object to csv file.'''
+        '''Loads objects to csv file     .'''
         from models.rectangle import Rectangle
         from models.square import Square
-        ret = []
+        retu = []
         with open('{}.csv'.format(cls.__name__), 'r', newline='',
                   encoding='utf-8') as f:
             reader = csv.reader(f)
@@ -99,5 +99,5 @@ class Base:
                 else:
                     d = {"id": row[0], "size": row[1],
                          "x": row[2], "y": row[3]}
-                ret.append(cls.create(**d))
-        return ret
+                retu.append(cls.create(**d))
+        return retu
