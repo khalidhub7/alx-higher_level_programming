@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''base module.'''
-from json import dumps
+from json import dumps, loads
 
 
 class Base:
@@ -38,4 +38,4 @@ class Base:
         if json_string is None or not json_string:
             return []
         else:
-            return dumps(json_string)
+            return loads(json_string)
