@@ -56,10 +56,18 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        '''Loads str from file AND unjsonifies.'''
-        from os import path
-        a = "{}.json".format(cls.__name__)
-        if not path.isfile(a):
+        """Return a list of classes instantiated from a file of JSON strings.
+
+        Reads from `<cls.__name__>.json`.
+
+        Returns:
+            If the file does not exist - an empty list.
+            Otherwise - a list of instantiated classes.
+        """
+        filename = str(cls.__name__) + ".json"
+        try:
+            with open(filename, "r") as jsonfile:
+                list_dicts = Base.from_json_string(jsonfile.read())
+                return [cls.create(**d) for d in list_dicts]
+        except IOError:
             return []
-        with open(a, "r", encoding="UTF-8") as x:
-            return [cls.create(**dic) for dic in cls.from_json_string(x.read())]
