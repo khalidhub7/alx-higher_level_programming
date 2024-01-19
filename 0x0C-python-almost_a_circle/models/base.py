@@ -53,3 +53,13 @@ class Base:
             dummy = None
         dummy.update(**dictionary)
         return dummy
+
+    @classmethod
+    def load_from_file(cls):
+        '''loads str from file'''
+        from os import path
+        a = '{}.json'.format(cls.__name__)
+        if not path.isfile(a):
+            return []
+        with open(a, 'r', encoding='UTF-8') as x:
+            return [cls.create(**dic) for dic in cls.from_json_string(x.read())]
