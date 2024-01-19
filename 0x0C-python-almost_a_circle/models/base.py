@@ -56,7 +56,7 @@ class Base:
 
     @classmethod
     def load_from_file(cls):
-        '''loads str from file'''
+        '''Loads str from file AND unjsonifies.'''
         from os import path
         a = '{}.json'.format(cls.__name__)
         if not path.isfile(a):
