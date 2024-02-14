@@ -1,2 +1,2 @@
 --lists all databases of your MySQL server
-SELECT * FROM uroot
+SELECT * FROM hlocalhost
