@@ -6,6 +6,6 @@ argv.forEach((value, key) => {
   } else if (key < 2) {
     console.log('No argument');
   } else {
-    return 0;
+    return 1;
   }
 });
