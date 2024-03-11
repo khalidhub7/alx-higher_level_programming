@@ -9,4 +9,3 @@ argv.forEach((value, key) => {
     return 0;
   }
 });
-
