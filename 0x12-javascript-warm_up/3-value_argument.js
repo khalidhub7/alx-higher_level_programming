@@ -1,6 +1,6 @@
 #!/usr/bin/node
 const { argv } = require('node:process');
-/* args: number of args passed in command line */
+/* args: number of args passed in command_line */
 let args = 0;
 argv.forEach((value, key) => {
   args++;
