@@ -1,13 +1,13 @@
 #!/usr/bin/node
 
 const { argv } = require('node:process');
-const list = [];
+const mylist = [];
 let nums = 0;
 
 /* extract elements in command line */
 argv.forEach((value, key) => {
   nums = value;
-  list.push(Number(nums));
+  mylist.push(nums);
 });
 
 if (argv.length < 4) {
@@ -17,7 +17,7 @@ if (argv.length < 4) {
   let i = 2;
   /* removing index 0 && index 1 in list  */
   while (i < argv.length) {
-    NewList.push(list[i]);
+    NewList.push(mylist[i]);
     i++;
   }
   NewList.sort();
