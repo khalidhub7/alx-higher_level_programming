@@ -11,7 +11,7 @@ argv.forEach((value, key) => {
 });
 
 if (argv.length < 4) {
-  console.log(Number(0));
+  console.log(0);
 } else {
   const NewList = [];
   let i = 2;
