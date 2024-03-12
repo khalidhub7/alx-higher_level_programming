@@ -6,11 +6,8 @@ let nums = 0;
 
 /* extract elements in command line */
 argv.forEach((value, key) => {
-  const nums = Number(value)
-  if (!isNaN(value)) {
     nums = value;
-  }
-  mylist.push(nums);
+  mylist.push(Number(nums));
 });
 
 if (argv.length < 4) {
