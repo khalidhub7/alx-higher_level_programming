@@ -4,7 +4,7 @@ const { argv } = require('node:process');
 const mylist = [];
 let nums = 0;
 
-/* extract elements in command line */
+/* extract elements in command_line */
 argv.forEach((value, key) => {
   nums = value;
   mylist.push(nums);
@@ -24,3 +24,4 @@ if (argv.length < 4) {
   NewList.reverse();
   console.log(NewList[1]);
 }
+
