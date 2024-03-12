@@ -1,26 +1,17 @@
-#!/usr/bin/node
-
 const { argv } = require('node:process');
 const mylist = [];
-let nums = 0;
 
-/* extract elements in command line */
-argv.forEach((value, key) => {
-  nums = value;
-  mylist.push(Number(nums));
+// Extract elements from command line
+argv.slice(2).forEach((value) => {
+  const num = Number(value);
+  if (!isNaN(num)) { // Check if the value is a valid number
+    mylist.push(num);
+  }
 });
 
-if (argv.length < 4) {
-  console.log(Number(0));
+if (mylist.length < 2) {
+  console.log(0);
 } else {
-  const NewList = [];
-  let i = 2;
-  /* removing index 0 && index 1 in list  */
-  while (i < argv.length) {
-    NewList.push(mylist[i]);
-    i++;
-  }
-  NewList.sort();
-  NewList.reverse();
-  console.log(NewList[1]);
+  const sortedList = mylist.sort((a, b) => b - a); // Sort in descending order
+  console.log(sortedList[1]);
 }
