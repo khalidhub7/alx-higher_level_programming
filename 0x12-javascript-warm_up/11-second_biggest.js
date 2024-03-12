@@ -11,7 +11,7 @@ argv.forEach((value, key) => {
 });
 
 if (argv.length < 4) {
-  console.log(Number(0));
+  console.log('0');
 } else {
   const NewList = [];
   let i = 2;
@@ -22,5 +22,5 @@ if (argv.length < 4) {
   }
   NewList.sort();
   NewList.reverse();
-  console.log(NewList[1]);
+  console.log(`${NewList[1]}`);
 }
