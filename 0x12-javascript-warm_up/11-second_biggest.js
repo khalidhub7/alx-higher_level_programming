@@ -6,7 +6,7 @@ let nums = 0;
 
 /* extract elements in command line */
 argv.forEach((value, key) => {
-    nums = value;
+  nums = value;
   mylist.push(Number(nums));
 });
 
