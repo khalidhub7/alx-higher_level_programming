@@ -1,3 +1,4 @@
+#!/usr/bin/node
 const mylist = [];
 let nums = 0;
 
