@@ -1,7 +1,5 @@
 #!/usr/bin/node
 
-/* function return reversed of list */
-
 exports.esrever = function (list) {
   let i = list.length - 1;
   rev = [];
