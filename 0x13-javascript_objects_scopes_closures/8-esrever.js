@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-/* returns reversed version of list */
+/* return reversed version of list */
 exports.esrever = function (list) {
   let i = list.length - 1;
   /* push reversed list */
@@ -8,7 +8,7 @@ exports.esrever = function (list) {
     list.push(list[i]);
     i--;
   }
-  /* remove original list */
+  /* remove original_list */
   list.splice(0, list.length / 2);
   return list;
 };
