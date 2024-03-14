@@ -7,5 +7,3 @@ exports.callMeMoby = function (x, theFunction) {
     i++;
   }
 }
-
-callMeMoby.exports;
