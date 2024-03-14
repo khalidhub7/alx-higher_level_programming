@@ -1,6 +1,6 @@
 #!/usr/bin/node
 
-const { list } = require('./100-main');
+const { list } = require('./100-data');
 let i = 0;
 let mapping = [];
 console.log(list);
