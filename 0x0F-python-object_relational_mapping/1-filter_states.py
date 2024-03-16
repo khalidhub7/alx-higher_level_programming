@@ -12,7 +12,7 @@ if __name__ == '__main__':
     datab = MySQLdb.connect(user=argv[1], passwd=argv[2], database=argv[3])
     curr = datab.cursor()
     myquery = "SELECT id, name FROM states WHERE name\
-         LIKE 'N%' ORDER BY id ASC;"
+         LIKE 'M%' ORDER BY id ASC;"
     curr.execute(myquery)
     results = curr.fetchall()
     for i in results:
