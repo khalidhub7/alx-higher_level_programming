@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 '''
-get and print all states
+get and print all _states
 '''
 
 import MySQLdb
