@@ -1,13 +1,13 @@
 #!/usr/bin/python3
 '''
-get and print all _states
+get and print all states
 '''
 
 import MySQLdb
-from sys import argv
+import sys
 
 if __name__ == '__main__':
-    db = MySQLdb.connect(user=argv[1], passwd=argv[2], database=argv[3])
+    db = MySQLdb.connect(user=sys.argv[1], passwd=sys.argv[2], database=sys.argv[3])
     curr = db.cursor()
     myquery = "SELECT id, name FROM states ORDER BY id ASC;"
     curr.execute(myquery)
