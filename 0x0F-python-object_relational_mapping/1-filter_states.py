@@ -4,6 +4,7 @@ get and print all states
 with simple filter
 '''
 
+
 import MySQLdb
 from sys import argv
 
