@@ -1,13 +1,10 @@
 #!/usr/bin/python3
-'''
-get and print all states
-with simple filter
-'''
+""" get and print all states with simple filter """
+
+import MySQLdb
+from sys import argv
 
 if __name__ == '__main__':
-
-    import MySQLdb
-    from sys import argv
 
     datab = MySQLdb.connect(user=argv[1], passwd=argv[2], database=argv[3])
     curr = datab.cursor()
