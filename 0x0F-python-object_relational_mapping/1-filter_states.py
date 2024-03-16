@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 '''
 get and print all states
+with simple filter
 '''
 
 import MySQLdb
@@ -16,5 +17,3 @@ if __name__ == '__main__':
     results = curr.fetchall()
     for i in results:
         print(i)
-    curr.close()
-    datab.close()
