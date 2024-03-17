@@ -16,7 +16,7 @@ if __name__ == '__main__':
     curr.execute(myquery)
     results = curr.fetchall()
     for i in results:
-        if i[1][0] == argv[4]:
+        if i[1] == argv[4]:
             print(i)
     curr.close()
     datab.close()
