@@ -1,7 +1,9 @@
 #!/usr/bin/python3
-""" get && print states table with some filter passing by arg"""
+"""Get and print states table with a filter passed as an argument."""
+
 import MySQLdb
 from sys import argv
+
 def process():
     datab = MySQLdb.connect(
         user=argv[1], passwd=argv[2], database=argv[3]
@@ -13,6 +15,5 @@ def process():
     for i in results:
         if i[1] == argv[4]:
             print(i)
-
 if __name__=='__main__':
     process()
