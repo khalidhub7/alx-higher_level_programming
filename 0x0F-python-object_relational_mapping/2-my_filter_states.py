@@ -12,7 +12,7 @@ if __name__ == '__main__':
     )
     curr = datab.cursor()
     myquery = "SELECT id, name FROM states WHERE name\
-    LIKE '{}' ORDER BY id ASC;".format(argv[4])
+    LIKE '{}%' ORDER BY id ASC;".format(argv[4])
     curr.execute(myquery)
     results = curr.fetchall()
     for i in results:
