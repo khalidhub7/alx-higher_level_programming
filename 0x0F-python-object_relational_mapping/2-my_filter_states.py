@@ -11,7 +11,7 @@ if __name__ == '__main__':
         user=argv[1], passwd=argv[2], database=argv[3]
     )
     curr = datab.cursor()
-    myquery = "SELECT * FROM states ORDER BY id ASC;"
+    myquery = "SELECT * FROM states ORDER BY id {};".format("ASC")
     curr.execute(myquery)
     results = curr.fetchall()
     for i in results:
