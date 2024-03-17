@@ -1,7 +1,6 @@
 #!/usr/bin/python3
 """  Get && print table with filter passed as arg. """
 
-
 import MySQLdb
 from sys import argv
 
@@ -14,5 +13,6 @@ def process():
     for i in results:
         if i[1] == argv[4]:
             print(i)
+
 if __name__=='__main__':
     process()
