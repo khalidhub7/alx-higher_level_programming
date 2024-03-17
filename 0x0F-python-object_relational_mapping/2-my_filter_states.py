@@ -2,7 +2,7 @@
 ''' get and print states with some filter passing by arg '''
 import MySQLdb
 from sys import argv
-def process():
+if __name__ == '__main__':
     datab = MySQLdb.connect(user=argv[1], passwd=argv[2], database=argv[3])
     curr = datab.cursor()
     myquery = 'SELECT id, name FROM states ORDER BY id {};'.format('ASC')
@@ -11,5 +11,3 @@ def process():
     for i in results:
         if i[1] == argv[4]:
             print(i)
-if __name__=='__main__':
-    process()
