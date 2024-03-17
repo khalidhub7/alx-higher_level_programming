@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Get and print states table with a filter passed as an argument."""
+"""Get && print table with filter passed as arg."""
 
 import MySQLdb
 from sys import argv
