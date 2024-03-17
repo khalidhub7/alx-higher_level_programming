@@ -11,13 +11,12 @@ if __name__ == '__main__':
         user=argv[1], passwd=argv[2], database=argv[3]
     )
     curr = datab.cursor()
-    look = argv[4]
     myquery = "SELECT id, name FROM states WHERE name\
-    LIKE '{}' ORDER BY id ASC;".format(look)
+    LIKE '{}' ORDER BY id ASC;".format(argv[4])
     curr.execute(myquery)
     results = curr.fetchall()
     for i in results:
-        if i[1][0] == look:
+        if i[1][0] == argv[4]:
             print(i)
     curr.close()
-    datab.close()g
+    datab.close()
