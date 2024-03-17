@@ -1,6 +1,5 @@
 #!/usr/bin/python3
-""" get and print states 
-with some filter passing by arg"""
+""" get and print states with some filter passing by arg"""
 
 import MySQLdb
 from sys import argv
