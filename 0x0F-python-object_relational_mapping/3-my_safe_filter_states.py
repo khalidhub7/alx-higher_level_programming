@@ -11,5 +11,4 @@ if __name__ == '__main__':
     curr.execute(myquery, (argv[4],))
     results = curr.fetchall()
     for i in results:
-        if i[1] == argv[4]:
-            print(i)
+        print(i)
