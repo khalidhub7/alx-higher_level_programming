@@ -13,11 +13,11 @@ if __name__ == '__main__':
     curr = datab.cursor()
     look = argv[4]
     myquery = "SELECT id, name FROM states WHERE name\
-         LIKE 'N%' ORDER BY id ASC;"
+    LIKE '{}' ORDER BY id ASC;".format(look)
     curr.execute(myquery)
     results = curr.fetchall()
     for i in results:
         if i[1][0] == look:
             print(i)
     curr.close()
-    datab.close()
+    datab.close()g
