@@ -1,0 +1,22 @@
+#!/usr/bin/python3
+"""Lists all cities from the database"""
+
+import MySQLdb
+from sys import argv
+
+if __name__ == '__main__':
+    datab = MySQLdb.connect(
+        user=argv[1], passwd=argv[2], database=argv[3]
+    )
+    curs = datab.cursor()
+
+    query = ("SELECT cities.id, cities.name, states.name "
+             "FROM cities "
+             "JOIN states ON cities.state_id = states.id "
+             "ORDER BY cities.id ASC")
+
+    curs.execute(query)
+    results = curs.fetchall()
+    for i in results:
+        if i[2] == argv[4]:
+            print(i[1], end="\n" if i[1] == 'Austin' else ', ')
