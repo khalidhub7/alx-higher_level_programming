@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 '''Get and print table with filter passed as argument.'''
 
 import MySQLdb
