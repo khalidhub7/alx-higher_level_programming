@@ -1,15 +1,30 @@
 #!/usr/bin/python3
-"""  lists all cities from the database  """
+"""Lists all cities from the database"""
 
+import sys
 import MySQLdb
-from sys import argv
-if __name__=='__main__':
-    datab = MySQLdb.connect(
-        user=argv[1], passwd=argv[2], database=argv[3]
-    )
-    curs = datab.cursor()
-    query = "SELECT * FROM cities ORDER BY id ASC"
-    curs.execute(query)
-    results = curs.fetchall()
-    for i in results:
-        print(i)
+
+if __name__ == '__main__':
+    if len(sys.argv) < 4:
+        print("Usage: python script.py username password database_name")
+        sys.exit(1)
+
+    username = sys.argv[1]
+    password = sys.argv[2]
+    database_name = sys.argv[3]
+
+    try:
+        datab = MySQLdb.connect(user=username, passwd=password, database=database_name)
+        curs = datab.cursor()
+        query = "SELECT * FROM cities ORDER BY id ASC"
+        curs.execute(query)
+        results = curs.fetchall()
+        for row in results:
+            print(row)
+    except MySQLdb.Error as e:
+        print(f"Error: {e}")
+    finally:
+        if curs:
+            curs.close()
+        if datab:
+            datab.close()
