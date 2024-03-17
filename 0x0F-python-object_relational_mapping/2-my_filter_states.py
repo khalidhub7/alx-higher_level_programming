@@ -1,5 +1,7 @@
 #!/usr/bin/python3
 """  Get && print table with filter passed as arg. """
+
+
 import MySQLdb
 from sys import argv
 def process():
