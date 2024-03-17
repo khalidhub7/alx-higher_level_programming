@@ -17,6 +17,9 @@ if __name__ == '__main__':
 
     curs.execute(query)
     results = curs.fetchall()
+
+    mystr = ''
     for i in results:
         if i[2] == argv[4]:
-            print(i[1], end="\n" if i[1] == 'Austin' else ', ')
+            mystr += ', ' + i[1]
+    print(mystr[2:])
