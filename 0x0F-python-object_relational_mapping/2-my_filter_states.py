@@ -4,6 +4,7 @@
 
 import MySQLdb
 from sys import argv
+
 def process():
     datab = MySQLdb.connect(user=argv[1], passwd=argv[2], database=argv[3])
     curs = datab.cursor()
