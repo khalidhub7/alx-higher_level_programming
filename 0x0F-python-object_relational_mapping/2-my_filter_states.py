@@ -1,11 +1,11 @@
 #!/usr/bin/python3
-"""Get && print table with filter passed as arg."""
+# Get && print table with filter passed as arg.
 import MySQLdb
 from sys import argv
 def process():
     datab = MySQLdb.connect(user=argv[1], passwd=argv[2], database=argv[3])
     curs = datab.cursor()
-    query = 'SELECT id, name FROM states ORDER BY id {};'.format('ASC')
+    query = 'SELECT * FROM states ORDER BY id {};'.format('ASC')
     curs.execute(query)
     results = curs.fetchall()
     for i in results:
