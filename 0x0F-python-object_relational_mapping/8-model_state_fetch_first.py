@@ -1,20 +1,19 @@
 #!/usr/bin/python3
-""" lists all State using sql alchemy with some filter"""
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
-import sys
+"""Start link class to table in database
+"""
+from sys import argv
 from model_state import Base, State
+from sqlalchemy.orm import sessionmaker
+
+from sqlalchemy import (create_engine)
 
 if __name__ == "__main__":
-    datab_url = "mysql://{}:{}@localhost/{}" \
-        .format(sys.argv[1], sys.argv[2], sys.argv[3])
-    enginee = create_engine(datab_url)
-    Session = sessionmaker(bind=enginee)
-    sess = Session()
-    results = sess.query(State).all()
-    if results:
-        for i in results:
-            if i.id == 1:
-                print("{}: {}".format(i.id, i.name))
-    else:
-        print('Nothing')
+    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}\
+'.format(argv[1], argv[2], argv[3]))
+    Base.metadata.create_all(engine)
+    session = sessionmaker(bind=engine)()
+    first = session.query(State).filter_by(id=1).first()
+    try:
+        print(first.id, first.name, sep=': ')
+    except Exception:
+        print("Nothing")
