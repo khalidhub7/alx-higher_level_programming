@@ -12,9 +12,9 @@ if __name__ == "__main__":
     Session = sessionmaker(bind=enginee)
     sess = Session()
     results = sess.query(State).all()
-    for i in results:
-        if i.id == 1:
-            print("{}: {}".format(i.id, i.name))
-        if i.id == None:
-            print('Nothing')
-            print()
+    if results:
+        for i in results:
+            if i.id == 1:
+                print("{}: {}".format(i.id, i.name))
+    else:
+        print('Nothing')
