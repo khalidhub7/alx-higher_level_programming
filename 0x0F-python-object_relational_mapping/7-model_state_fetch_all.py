@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" lists all State """
+""" lists all State using sql alchemy"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import sys
