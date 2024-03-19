@@ -8,11 +8,11 @@ from sqlalchemy.orm import sessionmaker
 from sqlalchemy import create_engine
 
 if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}\
+    datab = create_engine('mysql+mysqldb://{}:{}@localhost/{}\
 '.format(argv[1], argv[2], argv[3]))
-    Base.metadata.create_all(engine)
-    session = sessionmaker(bind=engine)()
-    first = session.query(State).filter_by(id=1).first()
+    engine = create_engine(datab)
+    ss = sessionmaker(bind=engine)
+    first = ss.query(State).filter_by(id=1).first()
     try:
         print(first.id, first.name, sep=': ')
     except Exception:
