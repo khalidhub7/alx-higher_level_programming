@@ -13,7 +13,7 @@ if __name__ == "__main__":
     Base.metadata.create_all(datab)
     session = sessionmaker(bind=datab)()
     results = session.query(State).filter(State.name == argv[4]).first()
-    if results:
-        print(state.id)
-    else:
+    if results == []:
         print('Not found')
+    else:
+        print(results[0].id)
