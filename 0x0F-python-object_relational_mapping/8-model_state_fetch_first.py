@@ -12,10 +12,8 @@ if __name__ == "__main__":
 '.format(argv[1], argv[2], argv[3]))
     Base.metadata.create_all(engine)
     session = sessionmaker(bind=engine)()
-    results = session.query(State).all()
-    if results:
-        for i in results:
-            if i.id == 1:
-                print('{}: {}'.format(i.id, i.name))
-    else:
-        print('Nothing')
+    first = session.query(State).filter_by(id=1).first()
+    try:
+        print(first.id, first.name, sep=': ')
+    except Exception:
+        print("Nothing")
