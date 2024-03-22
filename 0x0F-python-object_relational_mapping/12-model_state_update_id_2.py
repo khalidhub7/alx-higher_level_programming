@@ -1,6 +1,6 @@
 #!/usr/bin/python3
-""" Get a state 
-12"""
+""" Get a state task 13:wq
+"""
 from sys import argv
 from model_state import Base, State
 from sqlalchemy.orm import sessionmaker
@@ -14,4 +14,4 @@ if __name__ == "__main__":
     session = sessionmaker(bind=engine)()
     state = session.query(State).filter(State.id == 2).first()
     state.name = 'New Mexico'
-    session.commit()
+    session.commit()gg
