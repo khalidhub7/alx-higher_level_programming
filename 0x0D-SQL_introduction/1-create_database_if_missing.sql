@@ -1,2 +1,2 @@
--- script that create database hbtn_0c_0 in your MySQL server
+-- create database hbtn_0c_0 in MySQL
 CREATE DATABASE IF NOT EXISTS hbtn_0c_0;
