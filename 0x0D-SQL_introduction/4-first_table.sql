@@ -1,5 +1,5 @@
--- create table called 'first_table' in the current database in your MySQL server
--- you pass database as an argument 1
+-- create table first_table database in MySQL
 CREATE TABLE IF NOT EXISTS first_table (
-id INT, name VARCHAR(256)
-);
+id INT,
+name VARCHAR(256),
+)
