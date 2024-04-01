@@ -1,5 +1,3 @@
--- Displays avg temperature (in Fahrenheit) by city ordered by descending temperature
-SELECT city, AVG(value) AS avg_temp
-FROM temperatures
-GROUP BY city
-ORDER BY avg_temp DESC;
+-- AVG in hot database
+USE hbtn_0c_0;
+SELECT city, AVG(value) AS avgg FROM temperatures ORDER BY avgg DESC;
