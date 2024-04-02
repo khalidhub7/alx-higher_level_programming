@@ -1,5 +1,8 @@
--- lists all cities of California...
-SELECT id, name
+-- lists all cities of California
+-- (mn task 8 lfoo9 we working in 2 tables)
+SELECT cities.id, cities.name
 FROM cities
-WHERE state_id = (
-SELECT id FROM states WHERE name = 'California');
+WHERE cities.state_id = (
+	SELECT states.id FROM states
+	WHERE states.name = 'California'
+);
