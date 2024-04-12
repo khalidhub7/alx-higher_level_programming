@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+""" lists all states using py """
+
 
 if __name__ == '__main__':
     import MySQLdb
