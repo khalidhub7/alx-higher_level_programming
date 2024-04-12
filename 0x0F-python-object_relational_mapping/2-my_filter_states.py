@@ -18,7 +18,8 @@ if __name__ == '__main__':
     result = curs.fetchall()
 
     for i in result:
-        print(i)
+        if i[1] == argv[4]:
+            print(i)
 
     curs.close()
     conx.close()
