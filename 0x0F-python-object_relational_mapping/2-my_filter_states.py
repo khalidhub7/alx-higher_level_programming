@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+
 """Lists all states + arg to find"""
 
 if __name__ == '__main__':
