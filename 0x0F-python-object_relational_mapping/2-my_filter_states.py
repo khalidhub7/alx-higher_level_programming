@@ -11,7 +11,8 @@ if __name__ == '__main__':
         user=argv[1], passwd=argv[2], database=argv[3]
     )
     curs = conx.cursor()
-    query = 'SELECT * FROM states WHERE name LIKE "{}"'.format(argv[4])
+    query = 'SELECT * FROM states WHERE name LIKE "{}"'\
+        .format('%' + argv[4] + '%')
 
     curs.execute(query)
     result = curs.fetchall()
