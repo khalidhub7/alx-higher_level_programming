@@ -18,9 +18,5 @@ if __name__ == '__main__':
 
     curs.execute(query)
     results = curs.fetchall()
-    mylist = []
-    for i in results:
-        if i[2] == argv[4]:
-            mylist.append(i[1])
-    for j in mylist:
-        print(j, end="\n" if j == (mylist[len(mylist) - 1]) else ", ")
+    mylist = [city[1] for city in results if city[2] == argv[4]]
+    print(", ".join(mylist))
