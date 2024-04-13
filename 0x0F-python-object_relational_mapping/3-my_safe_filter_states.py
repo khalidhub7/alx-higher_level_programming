@@ -1,25 +1,25 @@
 #!/usr/bin/python3
 
-""" Lists all states + arg to find
-+ handle sql_injection """
+""" Lists all states matching a given pattern
+    and handles SQL injection """
+
+import MySQLdb
+import sys
 
 if __name__ == '__main__':
-    import MySQLdb
-    from sys import argv
-
     conx = MySQLdb.connect(
-        host="localhost", port=3306, 
-        user=argv[1], passwd=argv[2], database=argv[3]
-        )
+        host="localhost", port=3306,
+        user=sys.argv[1], passwd=sys.argv[2], database=sys.argv[3]
+    )
 
     curs = conx.cursor()
     query = 'SELECT * FROM states WHERE name LIKE %s'
-    curs.execute(query, (argv[4],))
+    # Prevent SQL injection by passing arguments in execute()
+    curs.execute(query, (sys.argv[4],))
 
-    """ to prevent sql injection,
-    we passing arg in execute() """
-    result = _curs.fetchall()
+    result = curs.fetchall()
     for i in result:
         print(i)
+
     curs.close()
     conx.close()
