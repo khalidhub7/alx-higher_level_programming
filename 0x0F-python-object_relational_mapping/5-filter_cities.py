@@ -13,10 +13,20 @@ if __name__ == '__main__':
 
     curs = conx.cursor()
     query = 'SELECT cities.id, cities.name, states.name ' \
-        'FROM cities INNER JOIN states ' \
-        'ON states.id = cities.state_id'
+            'FROM cities INNER JOIN states ' \
+            'ON states.id = cities.state_id'
 
     curs.execute(query)
     results = curs.fetchall()
-    mylist = [city[1] for city in results if city[2] == argv[4]]
-    print(", ".join(mylist))
+    mylist = []
+    for i in results:
+        if i[2] == argv[4]:
+            mylist.append(i[1])
+    for j in mylist:
+        print(j, end="\n" if j == (mylist[len(mylist) - 1]) else ", ")
+
+
+
+
+
+
