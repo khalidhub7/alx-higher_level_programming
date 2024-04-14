@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """ Get a state
 """
@@ -16,4 +15,3 @@ if __name__ == "__main__":
     state = session.query(State).filter(State.id == 2).first()
     state.name = 'New Mexico'
     session.commit()
-
