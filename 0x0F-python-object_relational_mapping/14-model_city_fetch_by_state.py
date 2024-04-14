@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """ Get a state
 """
@@ -17,4 +16,3 @@ if __name__ == "__main__":
     all = session.query(City, State).filter(City.state_id == State.id).all()
     for city, state in all:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
-
