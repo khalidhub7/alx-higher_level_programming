@@ -1,4 +1,3 @@
-
 #!/usr/bin/python3
 """ Get a state
 """
@@ -17,4 +16,3 @@ if __name__ == "__main__":
     session.add(new_obj)
     session.commit()
     print(new_obj.id)
-
