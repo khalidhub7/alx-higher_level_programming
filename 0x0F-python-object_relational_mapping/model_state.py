@@ -15,5 +15,5 @@ class State(Base):
         nullable=False
         )
     name = Column(
-        String(128), nullable=False
+        String(256), nullable=False
     )
