@@ -14,6 +14,6 @@ if __name__ == '__main__':
     Base.metadata.create_all(bind=engine)
     sess = Session(bind=engine)
 
-    obj = sess.query(State).filter(State.id == 2).all()
+    obj = sess.query(State).filter(State.id == 2).first()
     obj.name = 'New Mexico'
     sess.commit()
