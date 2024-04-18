@@ -13,10 +13,9 @@ if __name__ == '__main__':
     )
     Base.metadata.create_all(bind=engine)
     sess = Session(bind=engine)
-    result = sess.query(State).filter(State.name.like("{}"\
-        .format(argv[4]))).all()
+    result = sess.query(State).filter(State.name.like("{}".format(argv[4]))).all()
 
-    if result != []:
+    if result:
         print('{}'.format(result[0].id))
-    if result == []:
+    else:
         print('Not found')
