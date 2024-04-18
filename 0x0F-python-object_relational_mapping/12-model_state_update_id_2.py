@@ -16,7 +16,3 @@ if __name__ == '__main__':
     obj = State(id=2, name='New Mexico')
     sess.merge(obj)
     sess.commit()
-
-    """ result = sess.query(State).all()
-    for i in result:
-        print('{}: {}'.format(i.id, i.name)) """
