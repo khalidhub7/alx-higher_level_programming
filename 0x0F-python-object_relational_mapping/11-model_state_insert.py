@@ -19,10 +19,13 @@ if __name__ == '__main__':
     sess.add(new_obj)
     sess.commit()
 
-    # to display all
-    """ new = sess.query(State).all()
+
+    """ to display all
+    
+    new = sess.query(State).all()
     for i in new:
-        print('{}: {}'.format(i.id, i.name)) """
+        print('{}: {}'.format(i.id, i.name)) 
+    """
     
     new = sess.query(State).filter(State.name == 'Louisiana').all()
     print("{}".format(new[0].id))
