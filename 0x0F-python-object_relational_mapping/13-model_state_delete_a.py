@@ -1,19 +1,22 @@
 #!/usr/bin/python3
-""" Get a state
-"""
-from sys import argv
-from model_state import Base, State
-from sqlalchemy.orm import sessionmaker
 
-from sqlalchemy import (create_engine)
+"""sql_alchemy"""
 
-if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}\
-'.format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-    session = sessionmaker(bind=engine)()
-    all_a = session.query(State).filter(State.name.like('%a%\
-')).all()
-    for one in all_a:
-        session.delete(one)
-    session.commit()
+if __name__ == '__main__':
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import Session
+    from model_state import Base, State
+    from sys import argv
+
+    engine = create_engine(
+        'mysql://{}:{}@localhost/{}'.format(argv[1], argv[2], argv[3])
+    )
+    Base.metadata.create_all(bind=engine)
+    sess = Session(bind=engine)
+
+    sess.query(State).filter(State.name.like('%a%')).delete()
+    sess.commit()
+
+    result = sess.query(State).all()
+    for j in result:
+        print('{}: {}'.format(j.id, j.name))
