@@ -9,7 +9,7 @@ if __name__ == '__main__':
     from sys import argv
 
     engine = create_engine(
-        'mysqldb://{}:{}@localhost:3306/{}'.format(argv[1], argv[2], argv[3])
+        'mysql://{}:{}@localhost:3306/{}'.format(argv[1], argv[2], argv[3])
     )
     Base.metadata.create_all(bind=engine)
     sess = Session(bind=engine)
@@ -17,3 +17,7 @@ if __name__ == '__main__':
     obj.name = 'New Mexico'
     sess.merge(obj)
     sess.commit()
+
+    result = sess.query(State).all()
+    for i in result:
+        print('{}: {}'.format(i.id, i.name))
