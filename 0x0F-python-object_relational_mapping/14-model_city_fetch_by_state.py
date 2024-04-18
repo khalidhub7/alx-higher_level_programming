@@ -1,18 +1,25 @@
 #!/usr/bin/python3
-""" Get a state
-"""
-from sys import argv
-from model_state import Base, State
-from model_city import City
-from sqlalchemy.orm import sessionmaker
 
-from sqlalchemy import (create_engine)
+"""sql_alchemy"""
 
-if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}\
-'.format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-    session = sessionmaker(bind=engine)()
-    all = session.query(City, State).filter(City.state_id == State.id).all()
-    for city, state in all:
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+if __name__ == '__main__':
+    from model_state import Base, State
+    from model_city import City
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import Session
+    from sys import argv
+
+    engine = create_engine(
+        'mysql://{}:{}@localhost/{}'.format(argv[1], argv[2], argv[3])
+    )
+    Base.metadata.create_all(bind=engine)
+    sess = Session(bind=engine)
+
+    states = sess.query(State).all()
+    cities = sess.query(City).all()
+
+    for i in cities:
+        for j in states:
+            if j.id == i.state_id:
+                new = j.name
+        print('{}: ({}) {}'.format(new, i.id, i.name))
