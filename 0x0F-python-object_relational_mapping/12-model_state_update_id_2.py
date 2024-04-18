@@ -13,8 +13,6 @@ if __name__ == '__main__':
     )
     Base.metadata.create_all(bind=engine)
     sess = Session(bind=engine)
-
-    obj = State(id=2, name='Arizona')
-    obj.name = 'New Mexico'
-    sess.merge(obj)
+    state = sess.query(State).filter(State.id == 2).first()
+    state.name = 'New Mexico'
     sess.commit()
