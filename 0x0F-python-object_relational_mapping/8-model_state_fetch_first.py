@@ -1,19 +1,21 @@
 #!/usr/bin/python3
-"""Start link class to table in database
-"""
-from sys import argv
-from model_state import Base, State
-from sqlalchemy.orm import sessionmaker
 
-from sqlalchemy import (create_engine)
+"""sql_alchemy"""
 
-if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}\
-'.format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-    session = sessionmaker(bind=engine)()
-    first = session.query(State).filter_by(id=1).first()
-    try:
-        print(first.id, first.name, sep=': ')
-    except Exception:
-        print("Nothing")
+if __name__ == '__main__':
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import Session
+    from model_state import Base, State
+    from sys import argv
+
+    engine = create_engine(
+        'mysql://{}:{}@localhost:3306/{}'.format(argv[1], argv[2], argv[3])
+        )
+    Base.metadata.create_all(bind=engine)
+    sess = Session(bind=engine)
+    results = sess.query(State).order_by(State.id).first()
+
+    if results is not None:
+        print('{}: {}'.format(results.id, results.name))
+    else:
+        print('Nothing', end='\n\n')
