@@ -9,8 +9,7 @@ if __name__ == '__main__':
     from sys import argv
 
     engine = create_engine(
-        'mysql://{}:{}@localhost:3306/{}'\
-            .format(argv[1], argv[2], argv[3])
+        'mysql://{}:{}@localhost:3306/{}'.format(argv[1], argv[2], argv[3])
     )
     Base.metadata.create_all(bind=engine)
     new_obj = State(name='Louisiana')
@@ -18,7 +17,6 @@ if __name__ == '__main__':
     sess = Session(bind=engine)
     sess.add(new_obj)
     sess.commit()
-
 
     """ to display all
     
