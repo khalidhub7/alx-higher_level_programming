@@ -17,6 +17,6 @@ if __name__ == '__main__':
     sess.merge(obj)
     sess.commit()
 
-    result = sess.query(State).all()
+    """ result = sess.query(State).all()
     for i in result:
-        print('{}: {}'.format(i.id, i.name))
+        print('{}: {}'.format(i.id, i.name)) """
