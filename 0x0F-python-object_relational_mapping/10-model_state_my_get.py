@@ -15,7 +15,7 @@ if __name__ == '__main__':
     sess = Session(bind=engine)
     result = sess.query(State).filter(State.name.like("{}".format(argv[4]))).all()
 
-    if result:
+    if result != []:
         print('{}'.format(result[0].id))
-    else:
+    if result == []:
         print('Not found')
