@@ -1,20 +1,21 @@
 #!/usr/bin/python3
-""" Get a state
-"""
-from sys import argv
-from model_state import Base, State
-from sqlalchemy.orm import sessionmaker
 
-from sqlalchemy import (create_engine)
+"""sql_alchemy"""
 
-if __name__ == "__main__":
-    engine = create_engine('mysql+mysqldb://{}:{}@localhost/{}\
-'.format(argv[1], argv[2], argv[3]), pool_pre_ping=True)
-    Base.metadata.create_all(engine)
-    session = sessionmaker(bind=engine)()
-    all_a = session.query(State).filter(State.name == "{}\
-".format(argv[4])).order_by(State.id.asc()).all()
-    if all_a == []:
-        print("Not found")
+if __name__ == '__main__':
+    from model_state import State, Base
+    from sqlalchemy import create_engine
+    from sqlalchemy.orm import Session
+    from sys import argv
+
+    engine = create_engine(
+        'mysql://{}:{}@localhost/{}'.format(argv[1], argv[2], argv[3])
+    )
+    Base.metadata.create_all(bind=engine)
+    sess = Session(bind=engine)
+    result = sess.query(State).filter(State.name.like("{}".format(argv[4]))).all()
+
+    if result is not None:
+        print('{}'.format(result[0].id))
     else:
-        print(all_a[0].id)
+        print('Not found')
