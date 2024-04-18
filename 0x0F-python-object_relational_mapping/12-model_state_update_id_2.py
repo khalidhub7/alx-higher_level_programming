@@ -13,11 +13,8 @@ if __name__ == '__main__':
     )
     Base.metadata.create_all(bind=engine)
     sess = Session(bind=engine)
+    
     obj = State(id=2, name='Arizona')
     obj.name = 'New Mexico'
     sess.merge(obj)
     sess.commit()
-
-    result = sess.query(State).all()
-    for i in result:
-        print('{}: {}'.format(i.id, i.name))
