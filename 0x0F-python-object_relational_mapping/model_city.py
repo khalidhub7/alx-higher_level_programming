@@ -2,7 +2,7 @@
 
 """sql_alchemy"""
 
-from sqlalchemy import Column, String, Integer
+from sqlalchemy import Column, String, Integer, ForeignKey
 from model_state import Base, State
 
 
