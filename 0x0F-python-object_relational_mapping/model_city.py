@@ -8,8 +8,12 @@ from model_state import Base
 
 class City(Base):
     """ cities class """
-    __tablename__ = 'cities'
-    Base.super(id, name)
+    id = Column(
+        Integer, autoinrement=True, primary_key=True, nullable=False
+    )
+    name = Column(
+        String(128), nullable=False
+        )
     state_id = Column(
         Integer, ForeignKey('states.id'), nullable=False
-        )
+    )
