@@ -1,7 +1,3 @@
 #!/bin/bash
 # send GET request to URL and display body of response
-a=$(curl -X GET "$1")
-if("$a" == '200 OK');
-	then
-		echo"$a"
-fi
+a="$(curl -s -o /dev/null -w "%{http_code}" "$1")" && [ $a -eq 200 ] && curl -sL "$1"
