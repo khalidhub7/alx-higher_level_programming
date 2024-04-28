@@ -1,16 +1,13 @@
 #!/usr/bin/python3
 
-
-""" find a peak in a list """
-
+"""Find a peak in a list."""
 
 def find_peak(list_of_integers):
-    if len(list_of_integers) == 0:
+    if not list_of_integers:
         return None
-    elif len (list_of_integers) != 0:
+    else:
         peak = list_of_integers[0]
         for i in list_of_integers:
-            if i:
-                if i > peak:
-                    peak = i
+            if i > peak:
+                peak = i
         return peak
