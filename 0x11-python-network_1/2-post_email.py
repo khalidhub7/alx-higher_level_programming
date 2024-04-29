@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" sends a POST request """
+""" Sends a POST request """
 
 import urllib.request
+import urllib.parse
 from sys import argv
 
 if __name__ == '__main__':
@@ -15,4 +16,5 @@ if __name__ == '__main__':
 
     with urllib.request.urlopen(req) as page:
         var = page.read()
+
     print(f'{var}')
