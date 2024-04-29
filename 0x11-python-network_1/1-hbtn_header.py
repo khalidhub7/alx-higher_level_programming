@@ -2,6 +2,7 @@
 '''displays value of variable
  in header'''
 
+
 import urllib.request
 from sys import argv
 
