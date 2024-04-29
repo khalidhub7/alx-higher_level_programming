@@ -17,4 +17,4 @@ if __name__ == '__main__':
     with urllib.request.urlopen(req) as page:
         var = page.read()
 
-    print(f'{var}')
+    print(var)
