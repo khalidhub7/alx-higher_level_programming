@@ -1,9 +1,10 @@
 #!/usr/bin/python3
 
-import urllib
+import urllib.request
 
 url = 'https://alx-intranet.hbtn.io/status'
-with urllib.request.URLopener(url) as opened_url:
+with urllib.request.urlopen(url) as opened_url:
     responce = opened_url.read()
-for i in reading:
+
+for i in responce:
     print(i)
