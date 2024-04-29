@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+""" that fetches """
 
 import urllib.request
 
