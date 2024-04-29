@@ -15,5 +15,4 @@ if __name__ == '__main__':
 
     with urllib.request.urlopen(req) as page:
         var = page.read()
-
-    print(f'Your email is: {var}')
+    print(f'{var}')
