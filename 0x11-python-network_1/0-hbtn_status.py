@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-""" that fetches """
+"""script that fetches an url"""
 
-import urllib.request
 
-if __name__ == '__main__':
-    url = 'https://alx-intranet.hbtn.io/status'
-    with urllib.request.urlopen(url) as responce:
-        page = responce.read()
-    print('Body response:\n\
-    - type: {}\n\
-    - content: {}\n\
-    - utf8 content: {}'\
-    .format(type(page), page, page.decode('utf8')))
+from urllib.request import urlopen
+
+if __name__ == "__main__":
+    with urlopen("https://alx-intranet.hbtn.io/status") as response:
+        html = response.read()
+
+    print("Body response:")
+    print("{}- type: {}".format("\t", type(html)))
+    print("{}- content: {}".format("\t", html))
+    print("{}- utf8 content: {}".format("\t", html.decode("utf-8")))
