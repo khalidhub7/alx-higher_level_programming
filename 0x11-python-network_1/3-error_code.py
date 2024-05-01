@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ handle error """
 
-import urllib.request
+import urllib
 from sys import argv
 from urllib.error import HTTPError
 
