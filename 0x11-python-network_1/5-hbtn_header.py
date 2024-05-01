@@ -8,5 +8,5 @@ if __name__ == '__main__':
     url = argv[1]
     header_key = 'X-Request-Id'
     req = requests.get(url)
-    value = req.headers[header_key]
+    value = req.headers.get(header_key)
     print(value)
