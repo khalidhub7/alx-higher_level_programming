@@ -1,11 +1,13 @@
 #!/usr/bin/python3
-"""hard coding is a hard working"""
+""" post using requests package"""
+
 import requests
-import sys
+from sys import argv
 
 if __name__ == '__main__':
-    moi = requests.get(sys.argv[1])
-    if moi.status_code >= 400:
-        print('Error code: {}'.format(moi.status_code))
+    url = argv[1]
+    req = requests.get(url)
+    if req.code_status >= 400:
+        print(f'Error code: {code_status}')
     else:
-        print(moi.text)
+        print(req.text)
