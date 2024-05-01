@@ -8,6 +8,7 @@ from sys import argv
 
 if __name__ == '__main__':
     url = argv[1]
-    with urllib.request.urlopen(url) as response:
-        value = response.getheader("X-Request-Id")
+    header_key = 'X-Request-Id'
+    with urllib.request.urlopen(url) as res:
+        value = res.headers[header_key]
     print(value)
