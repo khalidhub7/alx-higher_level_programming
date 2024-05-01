@@ -1,12 +1,13 @@
 #!/usr/bin/python3
-"""hard coding is a hard working"""
+""" handle error """
+
 import urllib.request
-import sys
+from sys import argv
+from urllib.error import HTTPError
 
 if __name__ == '__main__':
+    url = argv[1]
     try:
-        with urllib.request.urlopen(sys.argv[1]) as response:
-            html = response.read()
-        print(html.decode('utf-8'))
-    except urllib.error.HTTPError as error:
-        print('Error code: {}'.format(error.code))
+        urllib.request.urlopen(url)
+    except HTTPError as rr:
+        print(f'Error code: {rr.code}')
