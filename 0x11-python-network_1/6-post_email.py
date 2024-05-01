@@ -1,14 +1,8 @@
 #!/usr/bin/python3
-""" post using requests package"""
-
+"""hard coding is a hard working"""
 import requests
-from sys import argv
+import sys
 
 if __name__ == '__main__':
-    url = argv[1]
-    email = argv[2]
-    data = {
-        'email': email
-    }
-    req = requests.post(url, data)
-    print(str(req.text()))
+    me = requests.post(sys.argv[1], {'email': sys.argv[2]})
+    print(str(me.text))
