@@ -1,5 +1,6 @@
 #!/usr/bin/python3
-""" post using requests package"""
+""" handle status code
+ using requests package"""
 
 import requests
 from sys import argv
