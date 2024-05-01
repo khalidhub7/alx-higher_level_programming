@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" fetche using package requests """
+""" fetch using package requests """
 
 import requests
 

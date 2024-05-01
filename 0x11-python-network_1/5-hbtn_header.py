@@ -1,8 +1,12 @@
 #!/usr/bin/python3
-"""give me requist id baliz"""
+""" get header using requests """
+
 import requests
-import sys
+from sys import argv
 
 if __name__ == '__main__':
-    omar = requests.get(sys.argv[1])
-    print(omar.headers.get('X-Request-Id'))
+    url = argv[1]
+    header_key = 'X-Request-Id'
+    req = requests.get(url)
+    value = req.headers[header_key]
+    print(value)
