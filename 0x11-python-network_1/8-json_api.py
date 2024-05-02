@@ -13,13 +13,10 @@ if __name__ == '__main__':
         req = requests.post(url, data=data)
 
         if req.headers.get('content-type') == 'application/json':
-            try:
-                response_json = req.json()
-                if 'id' in response_json and 'name' in response_json:
-                    print(f'[{response_json["id"]}] {response_json["name"]}')
-                else:
-                    print('No result')
-            except ValueError:
-                print('Invalid JSON format')
+            response_json = req.json()
+            if 'id' in response_json and 'name' in response_json:
+                print(f'[{response_json["id"]}] {response_json["name"]}')
+            else:
+                print('No result')
         else:
             print('Not a valid JSON')
