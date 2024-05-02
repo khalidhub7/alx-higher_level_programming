@@ -1,22 +1,25 @@
 #!/usr/bin/python3
-""" handle status code
- using requests package"""
+""" json api"""
 
 import requests
 from sys import argv
 
 if __name__ == '__main__':
-    url = 'http://0.0.0.0:5000/search_user'
-    if argv[1]:
+    if len(argv) < 2:
+        print('Usage: ./script_name.py <search_query>')
+    else:
+        url = 'http://0.0.0.0:5000/search_user'
         data = {'q': argv[1]}
-    else:
-        data = {'q': ''}
-    req = requests.post(url, data)
+        req = requests.post(url, data=data)
 
-    if req.headers.get('content-type') == 'application/json':
-        if req.json():
-            print(f'[{req.json().get("id")}] {req.json().get('name')}')
+        if req.headers.get('content-type') == 'application/json':
+            try:
+                response_json = req.json()
+                if 'id' in response_json and 'name' in response_json:
+                    print(f'[{response_json["id"]}] {response_json["name"]}')
+                else:
+                    print('No result')
+            except ValueError:
+                print('Invalid JSON format')
         else:
-            print('No result')
-    else:
-        print('Not a valid JSON')
+            print('Not a valid JSON')
