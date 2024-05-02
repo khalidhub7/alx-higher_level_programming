@@ -2,21 +2,26 @@
 """ json api"""
 
 import requests
-from sys import argv
+import sys
 
-if __name__ == '__main__':
-    if len(argv) < 2:
-        print('Usage: ./script_name.py <search_query>')
-    else:
-        url = 'http://0.0.0.0:5000/search_user'
-        data = {'q': argv[1]}
-        req = requests.post(url, data=data)
+def search_user(letter):
+    url = 'http://0.0.0.0:5000/search_user'
+    params = {'q': letter} if letter else {}
 
-        if req.headers.get('content-type') == 'application/json':
-            response_json = req.json()
-            if 'id' in response_json and 'name' in response_json:
-                print(f'[{response_json["id"]}] {response_json["name"]}')
-            else:
-                print('No result')
+    response = requests.post(url, params=params)
+
+    try:
+        data = response.json()
+        if data:
+            print(f"[{data['id']}] {data['name']}")
         else:
-            print('Not a valid JSON')
+            print("No result")
+    except ValueError:
+        print("Not a valid JSON")
+
+if len(sys.argv) > 1:
+    letter = sys.argv[1]
+else:
+    letter = ""
+
+search_user(letter)
