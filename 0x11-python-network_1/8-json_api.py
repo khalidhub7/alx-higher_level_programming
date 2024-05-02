@@ -1,27 +1,27 @@
 #!/usr/bin/python3
-""" json api"""
+"""post a letter, get id and name(name that match that letter)"""
 
-import requests
-import sys
 
-def search_user(letter):
-    url = 'http://0.0.0.0:5000/search_user'
-    params = {'q': letter} if letter else {}
+from sys import argv
+from requests import post
 
-    response = requests.post(url, params=params)
-
+if __name__ == "__main__":
     try:
-        data = response.json()
-        if data:
-            print(f"[{data['id']}] {data['name']}")
+        q = argv[1]
+    except IndexError:
+        q = ""
+
+    url = "http://0.0.0.0:5000/search_user"
+    data = {'q': q}
+    req = post(url, data=data)
+
+    if req.headers.get('content-type') == 'application/json':
+        content = req.json()
+        if content:
+            the_id = content.get('id')
+            name = content.get('name')
+            print("[{}] {}".format(the_id, name))
         else:
             print("No result")
-    except ValueError:
+    else:
         print("Not a valid JSON")
-
-if len(sys.argv) > 1:
-    letter = sys.argv[1]
-else:
-    letter = ""
-
-search_user(letter)
