@@ -1,4 +1,3 @@
-
 #!/usr/bin/node
 /* global $ */
 $(document).ready(() => {
@@ -6,4 +5,3 @@ $(document).ready(() => {
     $('.my_list').append('<li>Item</li>');
   });
 });
-
