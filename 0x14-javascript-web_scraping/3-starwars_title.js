@@ -1,13 +1,14 @@
 #!/usr/bin/node
 
-const request = require('request');
+const tool = require('request');
+const titleid = process.argv[2];
+const url = 'https://swapi-api.alx-tools.com/api/films/' + titleid;
 
-const id = process.argv[2];
-
-request.get(`https://swapi-api.alx-tools.com/api/films/${id}`, (err, resp) => {
-  if (err) {
-    console.error(err);
-  } else {
-    console.log(JSON.parse(resp.body).title);
-  }
-});
+function title (url) {
+  tool(url, (err, response, body) => {
+    if (!err) {
+      console.log(JSON.parse(body).title);
+    }
+  });
+}
+title(url);
