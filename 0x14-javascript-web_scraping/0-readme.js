@@ -14,4 +14,5 @@ function read_file (file_path) {
     }
   });
 }
+
 read_file(file_path);
