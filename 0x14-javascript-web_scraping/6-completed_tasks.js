@@ -1,22 +1,29 @@
 #!/usr/bin/node
 
-const request = require('request');
-
+const requesttool = require('request');
 const url = process.argv[2];
-const obj = {};
-request.get(url, (err, resp) => {
-  if (err) {
-    console.error(err);
-  } else {
-    const tasks = JSON.parse(resp.body);
-    for (const i in tasks) {
-      const key = tasks[i].userId.toString();
-      if (key in obj) {
-        obj[key] = tasks[i].completed ? obj[key] + 1 : obj[key];
-      } else if (tasks[i].completed) {
-        obj[key] = 1;
-      }
+
+function completedtasks (url) {
+  requesttool(url, (err, Response, body) => {
+    if (err) {
+      console.log(err);
+      return;
     }
-    console.log(obj);
-  }
-});
+    const data = JSON.parse(body);
+    const tasks = {};
+    let i = 0;
+
+    while (i < data.length) {
+      const userId = data[i].userId;
+      if (data[i].completed === true) {
+        if (!tasks[userId]) {
+          tasks[userId] = 0;
+        }
+        tasks[userId] += 1;
+      }
+      i++;
+    }
+    console.log(tasks);
+  });
+}
+completedtasks(url);
