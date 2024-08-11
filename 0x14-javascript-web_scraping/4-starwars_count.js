@@ -1,14 +1,12 @@
 #!/usr/bin/node
-
 const tool = require('request');
 const url = process.argv[2];
 const caracter = 'https://swapi-api.alx-tools.com/api/people/18/';
 
-function countfilms(url) {
+function countfilms (url) {
   tool(url, (err, response, body) => {
     if (err) {
-      console.log(err);
-      return 1;
+      console.error(err);
     }
     const data = JSON.parse(body).results;
     let i = 0;
