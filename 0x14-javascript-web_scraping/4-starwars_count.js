@@ -7,18 +7,20 @@ function countfilms (url) {
   tool(url, (err, response, body) => {
     if (err) {
       console.log(err);
-      return 1;
+      return;
     }
     const data = JSON.parse(body).results;
     let i = 0;
     let j = 0;
     let count = 0;
     while (i < data.length) {
-      while (j < data[i].characters.length) {
-        if (data[i].characters[j] === caracter) {
-          count += 1;
+      if (data[i].characters) { // Ensure characters array exists
+        while (j < data[i].characters.length) {
+          if (data[i].characters[j] === caracter) {
+            count += 1;
+          }
+          j++;
         }
-        j++;
       }
       i++;
       j = 0;
