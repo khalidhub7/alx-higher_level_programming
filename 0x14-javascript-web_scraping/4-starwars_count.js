@@ -1,22 +1,29 @@
 #!/usr/bin/node
-
-const request = require('request');
-
+const tool = require('request');
 const url = process.argv[2];
-request(url, function (err, body) {
-  if (err) {
-    console.error(err);
-  } else {
-    let num = 0;
-    const { results } = JSON.parse(body.body);
+const caracter = 'https://swapi-api.alx-tools.com/api/people/18/';
 
-    results.forEach((element, i) => {
-      for (const i in element.characters) {
-        if (element.characters[i].includes('/18/')) {
-          num++;
+function countfilms (url) {
+  tool(url, (err, response, body) => {
+    if (err) {
+      console.log(err);
+      return 1;
+    }
+    const data = JSON.parse(body).results;
+    let i = 0;
+    let j = 0;
+    let count = 0;
+    while (i < data.length) {
+      while (j < data[i].characters.length) {
+        if (data[i].characters[j] === caracter) {
+          count += 1;
         }
+        j++;
       }
-    });
-    console.log(num);
-  }
-});
+      i++;
+      j = 0;
+    }
+    console.log(count);
+  });
+}
+countfilms(url);
