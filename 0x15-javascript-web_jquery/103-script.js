@@ -1,5 +1,4 @@
-#!/usr/bin/node
-/* global $ */
+
 $(document).ready(() => {
   $("#hello").empty();
   let f = () => {
