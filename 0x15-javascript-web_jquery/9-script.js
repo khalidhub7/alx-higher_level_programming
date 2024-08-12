@@ -1,11 +1,6 @@
-#!/usr/bin/node
-/* global $ */
-$(document).ready(() => {
-  $.ajax({
-    url: 'https://hellosalut.stefanbohacek.dev/?lang=fr',
-    method: 'GET',
-    success: function (data) {
-      $('#hello').html(data.hello);
-    }
-  });
+const url = "https://hellosalut.stefanbohacek.dev/?lang=fr";
+
+$.get(url, (data) => {
+    const neww = data.hello;
+    $("#hello").text(neww);
 });

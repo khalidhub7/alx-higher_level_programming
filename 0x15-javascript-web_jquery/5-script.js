@@ -1,7 +1,4 @@
-#!/usr/bin/node
-/* global $ */
-$(document).ready(() => {
-  $('#add_item').on('click', () => {
-    $('.my_list').append('<li>Item</li>');
-  });
+$("#add_item").on("click", function() {
+    let neww = "<li>Item</li>";
+    $(".my_list").append(neww);
 });

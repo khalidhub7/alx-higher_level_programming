@@ -1,5 +1,5 @@
-#!/usr/bin/node
-/* global $ */
-$(document).ready(() => {
-  $('header').addClass('red');
+$("#red_header").on("click", function() {
+    if (!($("header").hasClass("red"))) {
+        $("header").addClass("red");
+    }
 });

@@ -1,13 +1,6 @@
-#!/usr/bin/node
-/* global $ */
-$(document).ready(() => {
-  $.ajax({
-    url: 'https://swapi-api.alx-tools.com/api/films/?format=json',
-    method: 'GET',
-    success: function (data) {
-      for (const m in data.results) {
-        $('#list_movies').append(`<li>${data.results[m].title}</li>`);
-      }
-    }
-  });
+const url = "https://swapi-api.alx-tools.com/api/people/5/?format=json";
+
+$.get(url, (data) => {
+    data.films.forEach((filmUrl) => $.get(filmUrl, (film) => 
+        $('#list_movies').append(`<li>${film.title}</li>`)));
 });

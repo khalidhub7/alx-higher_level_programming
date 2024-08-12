@@ -1,15 +1,8 @@
-#!/usr/bin/node
-/* global $ */
-$(document).ready(() => {
-  $('#btn_translate').click(() => {
-    $('#hello').empty();
-    let l = $('#language_code').val();
-    $.ajax({
-      type: 'GET',
-      url: `https://hellosalut.stefanbohacek.dev/?lang=${l}`,
-      success: function (data) {
-        $('#hello').append(data.hello);
-      }
+$(function() {
+  $('#btn_translate').click(function() {
+    const lang = $('#language_code').val();
+    $.get(`https://hellosalut.stefanbohacek.dev/?lang=${lang}`, function(data) {
+      $('#hello').text(data.hello);
     });
   });
 });
